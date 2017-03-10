@@ -1,0 +1,32 @@
+{
+  "name": "vktoken",
+  "version": "0.1.0",
+  "description": "Get VK Token",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "vktoken": "bin/vktoken"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/notarseniy/vktoken.git"
+  },
+  "keywords": [
+    "vk",
+    "oauth",
+    "authorization"
+  ],
+  "author": "Arseniy Maximov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notarseniy/vktoken/issues"
+  },
+  "homepage": "https://github.com/notarseniy/vktoken#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "node-vkapi": "^2.1.0",
+    "open": "0.0.5"
+  }
+}

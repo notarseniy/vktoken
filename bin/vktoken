@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+// vktoken --auth (ignore config.json)
+const VKToken = require('../src/vktoken');
+
+const version = require('../package.json').version;
+
+const args = require('minimist')(process.argv.slice(2), {
+  string: ['client_id', 'client_secret', 'phone', 'username', 'password', 'config'],
+  boolean: ['help']
+});
+
+if (args.help) {
+  console.log(
+    'VKToken v' + version + '\n' +
+    '\n' +
+    'Usage:\n' + 
+    'vktoken --client_id 1337 --client_secret "THISISRANDOMEXAMPLE" --username "+79999999999" --password "qwertyuiop" --phone "+79999999999"\n' +
+    '\n' +
+    'GitHub:\n' +
+    'http://github.com/notarseniy/vktoken\n' +
+    '\n' + 
+    'Author:\n' +
+    'Arseniy Maximov — http://notarseniy.ru'
+    );
+  return;
+}
+
+const config = require(args.config || '../config.json');
+
+const clientId = parseInt(args.client_id, 10) || config.client_id;
+const clientSecret = args.client_secret || config.client_secret;
+
+const username = args.username || config.username;
+const password = args.password || config.password;
+const phone = args.phone || config.phone;
+
+VKToken({
+  clientId: clientId,
+  clientSecret: clientSecret,
+  username: username,
+  password: password,
+  phone: phone
+}, function (error, token) {
+  if (error) throw new Error(error);
+  
+  console.log(token);
+});
