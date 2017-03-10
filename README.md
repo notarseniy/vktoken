@@ -3,18 +3,18 @@
 Get OAuth 2.0 token from VK.
 
 ## Install
-```npm install -g vktoken```<br>
+`npm install -g vktoken`<br>
 *(or without `-g` flag, if you're using it only as library)*
 
 ## Usage from terminal
 **With vktoken.json:**<br>
-```vktoken```
+`vktoken`
 
 See config example in [vktoken.example.json](https://github.com/notarseniy/vktoken/blob/master/vktoken.example.json).
 <hr>
 
 **With command line options:**<br>
-```vktoken --client_id 1337 --client_secret "THISISRANDOMEXAMPLE" --username "+79999999999" --password "qwertyuiop" --phone "+79999999999"```
+`vktoken --client_id 1337 --client_secret "THISISRANDOMEXAMPLE" --username "+79999999999" --password "qwertyuiop" --phone "+79999999999"`
 
 *Arguments:*
 * `--client_id` — ID of your application;
@@ -25,7 +25,7 @@ See config example in [vktoken.example.json](https://github.com/notarseniy/vktok
 <hr>
 
 **MacOS (copies to clipboard):**<br>
-```vktoken | pbcopy```
+`vktoken | pbcopy`
 <hr>
 
 The response contains the token.
