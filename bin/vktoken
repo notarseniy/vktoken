@@ -26,7 +26,7 @@ if (args.help) {
   return;
 }
 
-const config = require(args.config || '../config.json');
+const config = require(args.config || process.cwd() + '/vktoken.json');
 
 const clientId = parseInt(args.client_id, 10) || config.client_id;
 const clientSecret = args.client_secret || config.client_secret;
